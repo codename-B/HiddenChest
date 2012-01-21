@@ -131,6 +131,9 @@ public class HiddenChestListener {
 		// They're not interacting with a block
 		if(inHand == Material.AIR || inHand.getId() > 127)
 			return true;
+		// Make sure the chest is the same as the one in the hand
+		if(block.getType() != inHand)
+			return true;
 		// What world are we in?
 		World world = block.getWorld();
 		// Get the HiddenChest (or null)
